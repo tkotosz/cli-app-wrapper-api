@@ -1,0 +1,16 @@
+{
+    "name": "tkotosz/cli-app-wrapper-api",
+    "type": "library",
+    "description": "CLI App Wrapper API",
+    "authors": [
+        {
+            "name": "Tibor Kotosz",
+            "email": "kotosy@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Tkotosz\\CliAppWrapperApi\\": "src"
+        }
+    }
+}
