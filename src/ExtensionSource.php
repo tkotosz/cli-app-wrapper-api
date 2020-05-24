@@ -13,7 +13,7 @@ class ExtensionSource
     /** @var string */
     private $url;
 
-    public function fromValues(string $name, string $type, string $url): ExtensionSource
+    public static function fromValues(string $name, string $type, string $url): ExtensionSource
     {
         return new self($name, $type, $url);
     }
