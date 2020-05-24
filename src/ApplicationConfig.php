@@ -58,6 +58,20 @@ class ApplicationConfig
         return $this->config['global_mode_enabled'] ?? false;
     }
 
+    public function getLocalWorkingDir(): string
+    {
+        return getcwd();
+    }
+
+    public function getGlobalWorkingDir(): string
+    {
+        if ($path = getenv('XDG_CONFIG_HOME')) {
+            return $path;
+        }
+
+        return getenv('HOME') ?: (getenv('HOMEDRIVE') . DIRECTORY_SEPARATOR . getenv('HOMEPATH'));
+    }
+
     private function __construct(array $config)
     {
         $this->config = $config;
