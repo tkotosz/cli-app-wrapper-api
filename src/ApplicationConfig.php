@@ -50,7 +50,7 @@ class ApplicationConfig
 
     public function repositories(): array
     {
-        return $this->config['repositories'];
+        return $this->config['repositories'] ?? [];
     }
 
     private function __construct(array $config)
