@@ -53,6 +53,11 @@ class ApplicationConfig
         return $this->config['repositories'] ?? [];
     }
 
+    public function isGlobalModeEnabled(): bool
+    {
+        return $this->config['global_mode_enabled'] ?? false;
+    }
+
     private function __construct(array $config)
     {
         $this->config = $config;
