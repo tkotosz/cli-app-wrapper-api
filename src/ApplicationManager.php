@@ -8,6 +8,8 @@ interface ApplicationManager
 
     public function getWorkingDirectory(): string;
 
+    public function init(): int;
+
     public function updateExtensions(): int;
 
     public function installExtension(string $extensionPackage, string $extensionVersion = null): int;
