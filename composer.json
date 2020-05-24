@@ -1,6 +1,7 @@
 {
     "name": "tkotosz/cli-app-wrapper-api",
     "type": "library",
+    "license": "MIT",
     "description": "CLI App Wrapper API",
     "authors": [
         {
