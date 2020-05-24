@@ -16,6 +16,10 @@ interface ApplicationManager
 
     public function removeExtension(string $extensionPackage): int;
 
+    public function addExtensionSource(ExtensionSource $extensionSource): int;
+
+    public function findExtensionSources(): ExtensionSources;
+
     public function findInstalledExtensions(): Extensions;
 
     public function findAvailableExtensions(): Extensions;
