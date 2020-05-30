@@ -6,23 +6,31 @@ interface ApplicationManager
 {
     public function getApplicationConfig(): ApplicationConfig;
 
-    public function getWorkingDirectory(): string;
+    public function getWorkingMode(): WorkingMode;
 
-    public function init(): int;
+    public function getWorkingDirectory(): WorkingDirectory;
 
-    public function updateExtensions(): int;
+    public function getLocalWorkingDirectory(): WorkingDirectory;
 
-    public function installExtension(string $extensionPackage, string $extensionVersion = null): int;
+    public function getGlobalWorkingDirectory(): WorkingDirectory;
 
-    public function removeExtension(string $extensionPackage): int;
+    public function getApplicationDirectory(): ApplicationDirectory;
 
-    public function addExtensionSource(ExtensionSource $extensionSource): int;
+    public function getLocalApplicationDirectory(): ApplicationDirectory;
 
-    public function removeExtensionSource(string $name): int;
+    public function getGlobalApplicationDirectory(): ApplicationDirectory;
 
-    public function findExtensionSources(): ExtensionSources;
+    public function installExtension(string $extensionPackage, string $extensionVersion = null): ApplicationCommandResult;
+
+    public function removeExtension(string $extensionPackage): ApplicationCommandResult;
 
     public function findInstalledExtensions(): Extensions;
 
     public function findAvailableExtensions(): Extensions;
+
+    public function addExtensionSource(ExtensionSource $extensionSource): ApplicationCommandResult;
+
+    public function removeExtensionSource(string $name): ApplicationCommandResult;
+
+    public function findExtensionSources(): ExtensionSources;
 }
