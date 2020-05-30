@@ -76,6 +76,11 @@ class ApplicationConfig
         return $this->config['global_mode_enabled'];
     }
 
+    public function allowsExtensions(): bool
+    {
+        return $this->appExtensionsPackageType() !== null && $this->appExtensionsExtensionClassConfigField() !== null;
+    }
+
     public function localWorkingDirectoryResolvers(): array
     {
         return array_filter(
