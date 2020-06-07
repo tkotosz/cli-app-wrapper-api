@@ -10,6 +10,7 @@ class ApplicationConfig
     private const DEFAULT_CONFIGS = [
         'repositories' => [],
         'global_mode_enabled' => false,
+        'local_mode_enabled' => true,
         'app_extensions' => [
             'package_type' => null,
             'extension_class_config_field' => null
@@ -26,6 +27,10 @@ class ApplicationConfig
             if (empty($config[$key])) {
                 throw new InvalidArgumentException(sprintf('Config "%s" required but not found', $key));
             }
+        }
+
+        if (!$config['global_mode_enabled'] && !$config['local_mode_enabled']) {
+            throw new InvalidArgumentException('Cannot disable both local and global mode');
         }
 
         return new self($config + self::DEFAULT_CONFIGS);
@@ -74,6 +79,23 @@ class ApplicationConfig
     public function isGlobalModeEnabled(): bool
     {
         return $this->config['global_mode_enabled'];
+    }
+
+    public function isLocalModeEnabled(): bool
+    {
+        return $this->config['local_mode_enabled'];
+    }
+
+    public function isSingleModeApplication(): bool
+    {
+        return
+            ($this->isLocalModeEnabled() && !$this->isGlobalModeEnabled()) ||
+            (!$this->isLocalModeEnabled() && $this->isGlobalModeEnabled());
+    }
+
+    public function defaultWorkingMode(): WorkingMode
+    {
+        return $this->isLocalModeEnabled() ? WorkingMode::local() : WorkingMode::global();
     }
 
     public function allowsExtensions(): bool
