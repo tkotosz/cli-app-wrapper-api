@@ -1,18 +1,18 @@
 <?php
 
-namespace Tkotosz\CliAppWrapperApi;
+namespace Tkotosz\CliAppWrapperApi\Api\V1\Model;
 
 use ArrayIterator;
 use IteratorAggregate;
 use Traversable;
 
-class ExtensionSources implements IteratorAggregate
+class Extensions implements IteratorAggregate
 {
-    /** @var ExtensionSource[] */
+    /** @var Extension[] */
     private $items;
 
     /**
-     * @param ExtensionSource[] $items
+     * @param Extension[] $items
      *
      * @return self
      */
@@ -22,7 +22,7 @@ class ExtensionSources implements IteratorAggregate
     }
 
     /**
-     * @return ExtensionSource[]
+     * @return Extension[]
      */
     public function items(): array
     {
@@ -30,7 +30,7 @@ class ExtensionSources implements IteratorAggregate
     }
 
     /**
-     * @return Traversable|ExtensionSource[]
+     * @return Traversable|Extension[]
      */
     public function getIterator(): Traversable
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tkotosz\CliAppWrapperApi;
+namespace Tkotosz\CliAppWrapperApi\Api\V1;
 
 interface ApplicationFactory
 {

@@ -1,6 +1,15 @@
 <?php
 
-namespace Tkotosz\CliAppWrapperApi;
+namespace Tkotosz\CliAppWrapperApi\Api\V1;
+
+use Tkotosz\CliAppWrapperApi\Api\V1\Model\ApplicationCommandResult;
+use Tkotosz\CliAppWrapperApi\Api\V1\Model\ApplicationConfig;
+use Tkotosz\CliAppWrapperApi\Api\V1\Model\ApplicationDirectory;
+use Tkotosz\CliAppWrapperApi\Api\V1\Model\Extensions;
+use Tkotosz\CliAppWrapperApi\Api\V1\Model\ExtensionSource;
+use Tkotosz\CliAppWrapperApi\Api\V1\Model\ExtensionSources;
+use Tkotosz\CliAppWrapperApi\Api\V1\Model\WorkingDirectory;
+use Tkotosz\CliAppWrapperApi\Api\V1\Model\WorkingMode;
 
 interface ApplicationManager
 {

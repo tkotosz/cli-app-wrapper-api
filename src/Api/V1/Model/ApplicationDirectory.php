@@ -1,25 +1,25 @@
 <?php
 
-namespace Tkotosz\CliAppWrapperApi;
+namespace Tkotosz\CliAppWrapperApi\Api\V1\Model;
 
-final class WorkingDirectory
+final class ApplicationDirectory
 {
     /** @var AbsolutePath */
     private $path;
 
-    public static function fromAbsolutePath(AbsolutePath $path): WorkingDirectory
+    public static function fromAbsolutePath(AbsolutePath $path): ApplicationDirectory
     {
         return new self($path);
     }
 
-    public static function fromString(string $directory): WorkingDirectory
+    public static function fromString(string $directory): ApplicationDirectory
     {
         return self::fromAbsolutePath(AbsolutePath::fromString($directory));
     }
 
-    public function sameAs(WorkingDirectory $workingDirectory): bool
+    public function sameAs(ApplicationDirectory $applicationDirectory): bool
     {
-        return $this->path->sameAs($workingDirectory->path);
+        return $this->path->sameAs($applicationDirectory->path);
     }
 
     public function path(): AbsolutePath
