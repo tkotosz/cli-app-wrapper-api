@@ -42,4 +42,6 @@ interface ApplicationManager
     public function removeExtensionSource(string $name): ApplicationCommandResult;
 
     public function findExtensionSources(): ExtensionSources;
+
+    public function update(): ApplicationCommandResult;
 }

@@ -51,6 +51,16 @@ class ApplicationConfig
         return $this->config['app_version'];
     }
 
+    public function githubUser(): ?string
+    {
+        return $this->config['github_user'] ?? null;
+    }
+
+    public function githubRepository(): ?string
+    {
+        return $this->config['github_repository'] ?? null;
+    }
+
     public function appExtensionsPackageType(): ?string
     {
         return $this->config['app_extensions']['package_type'] ?? null;
