@@ -6,7 +6,7 @@ use InvalidArgumentException;
 
 class ApplicationConfig
 {
-    private const REQUIRED_CONFIGS = ['app_name', 'app_package', 'app_version', 'app_dir', 'app_factory'];
+    private const REQUIRED_CONFIGS = ['app_name', 'app_package', 'app_version', 'app_dir', 'app_factory', 'app_executable_name'];
     private const DEFAULT_CONFIGS = [
         'repositories' => [],
         'global_mode_enabled' => false,
@@ -49,6 +49,11 @@ class ApplicationConfig
     public function appVersion(): string
     {
         return $this->config['app_version'];
+    }
+
+    public function appExecutableName(): string
+    {
+        return $this->config['app_executable_name'];
     }
 
     public function githubUser(): ?string
