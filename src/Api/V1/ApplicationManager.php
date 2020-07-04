@@ -3,7 +3,6 @@
 namespace Tkotosz\CliAppWrapperApi\Api\V1;
 
 use Tkotosz\CliAppWrapperApi\Api\V1\Model\ApplicationCommandResult;
-use Tkotosz\CliAppWrapperApi\Api\V1\Model\ApplicationConfig;
 use Tkotosz\CliAppWrapperApi\Api\V1\Model\ApplicationDirectory;
 use Tkotosz\CliAppWrapperApi\Api\V1\Model\Extensions;
 use Tkotosz\CliAppWrapperApi\Api\V1\Model\ExtensionSource;
@@ -13,8 +12,6 @@ use Tkotosz\CliAppWrapperApi\Api\V1\Model\WorkingMode;
 
 interface ApplicationManager
 {
-    public function getApplicationConfig(): ApplicationConfig;
-
     public function getWorkingMode(): WorkingMode;
 
     public function getWorkingDirectory(): WorkingDirectory;
